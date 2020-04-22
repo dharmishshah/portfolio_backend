@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from portfolio.models.models import Education
+from portfolio.models.models import Education, Experience, Skills, Projects
 
-admin.site.register([Education])
+admin.site.register([Education, Experience, Skills, Projects ])

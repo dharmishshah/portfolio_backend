@@ -3,6 +3,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('getEducations',views.getAllEducations,name='getAllEducations')
+    path('getEducations',views.getAllEducations,name='getAllEducations'),
+    path('getExperiences',views.getAllExperiences,name='getAllExperiences'),
+    path('getSkills',views.getAllSkills,name='getAllSkills'),
+    path('getProjects',views.getAllProjects,name='getAllProjects')
 
 ]
