@@ -16,6 +16,10 @@ urlpatterns = [
     path('getExperiences',views.getAllExperiences,name='getAllExperiences'),
     path('getSkills',views.getAllSkills,name='getAllSkills'),
     path('getProjects',views.getAllProjects,name='getAllProjects'),
+    path('getCertificates',views.getAllCertificates,name='getAllCertificates'),
+    path('getRecommendations',views.getAllRecommendations,name='getAllRecommendations'),
+    path('getPersonalInfo',views.getAllPersonalInfo,name='getAllPersonalInfo'),
+    path('sendEmail',views.sendEmail,name='sendEmail'),
 
     path('', include(router.urls)),
 

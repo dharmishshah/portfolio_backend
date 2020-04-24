@@ -61,6 +61,14 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'dharmishshahportfolio@gmail.com'
+EMAIL_HOST_PASSWORD = 'Blackveins@1'
+EMAIL_RECIPIENT = 'dharmish21@gmail.com'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -74,7 +82,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Portfolio_backend.urls'
-
+CSRF_COOKIE_SECURE = False
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -86,3 +86,37 @@ class Publications(models.Model):
 
     def __str__(self):
         return self.name
+
+class Recommendations(models.Model):
+    name = models.CharField(max_length=1000)
+    organisation = models.CharField(max_length=1000)
+    role = models.CharField(max_length=1000)
+    date = models.CharField(max_length=100)
+    linkedInlink = models.CharField(max_length=200)
+    imageLink = models.CharField(max_length=200)
+    description = models.CharField(max_length=10000)
+    status = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.name
+
+class Personal(models.Model):
+    interests = models.CharField(max_length=10000)
+    honors =  models.CharField(max_length=10000)
+    achievements =  models.CharField(max_length=10000)
+    imageLink = models.CharField(max_length=200)
+    description = models.CharField(max_length=10000)
+    status = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.interests
+
+class EmailDetails(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=200)
+    organisation = models.CharField(max_length=100)
+    date = models.DateField(max_length=100)
+    message = models.CharField(max_length=10000)
+
+    def __str__(self):
+        return self.email

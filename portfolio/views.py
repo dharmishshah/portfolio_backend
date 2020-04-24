@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
 
 import portfolio.manager.manager as e
 
@@ -9,7 +10,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 
-from portfolio.models.models import Education
+from portfolio.models.models import Education,EmailDetails
 from portfolio.serializers import UserSerializer, GroupSerializer, EducationSerializer
 
 def index(request):
@@ -34,6 +35,30 @@ def getAllProjects(request):
     edu = e.getAllProjects()
     edu_json = serializers.serialize('json', edu)
     return HttpResponse({edu_json})
+def getAllCertificates(request):
+    edu = e.getAllCertificates()
+    edu_json = serializers.serialize('json', edu)
+    return HttpResponse({edu_json})
+def getAllRecommendations(request):
+    edu = e.getAllRecommendations()
+    edu_json = serializers.serialize('json', edu)
+    return HttpResponse({edu_json})
+def getAllPersonalInfo(request):
+    edu = e.getAllPersonalInfo()
+    edu_json = serializers.serialize('json', edu)
+    return HttpResponse({edu_json})
+@csrf_exempt
+def sendEmail(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        organisation = request.POST.get("organisation")
+        message = request.POST.get("message")
+        e.sendEmail(name,organisation,email,message)
+        message = 'success'
+        return HttpResponse({'success'})
+    else:
+        return HttpResponse({'GET method not supported'})
 
 
 class UserViewSet(viewsets.ModelViewSet):
