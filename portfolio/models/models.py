@@ -1,3 +1,4 @@
+from django import forms
 from djongo import models
 
 class Education(models.Model):
@@ -14,7 +15,8 @@ class Education(models.Model):
     major = models.CharField(max_length=100)
     status = models.CharField(max_length=100)
     imageLink = models.CharField(max_length=200)
-    course = models.ArrayField
+    courses = models.CharField(max_length=1000)
+    link = models.CharField(max_length=200)
     def __str__(self):
         return self.name
 
@@ -31,7 +33,8 @@ class Experience(models.Model):
     techStack = models.CharField(max_length=1000)
     status = models.CharField(max_length=200)
     imageLink = models.CharField(max_length=200)
-    description = models.ArrayField
+    description = models.CharField(max_length=10000)
+
     def __str__(self):
         return self.company
 
@@ -58,6 +61,7 @@ class Projects(models.Model):
     imageLink = models.CharField(max_length=200)
     description = models.ArrayField
     status = models.CharField(max_length=1000)
+    description = models.CharField(max_length=10000)
     def __str__(self):
         return self.name
 
@@ -68,9 +72,8 @@ class Certificates(models.Model):
     expiryDate = models.CharField(max_length=100)
     link = models.CharField(max_length=200)
     imageLink = models.CharField(max_length=200)
-    description = models.ArrayField
+    description = models.CharField(max_length=10000)
     status = models.CharField(max_length=1000)
-
     def __str__(self):
         return self.name
 
@@ -81,7 +84,7 @@ class Publications(models.Model):
     expiryDate = models.CharField(max_length=100)
     link = models.CharField(max_length=200)
     imageLink = models.CharField(max_length=200)
-    description = models.ArrayField
+    description = models.CharField(max_length=10000)
     status = models.CharField(max_length=1000)
 
     def __str__(self):

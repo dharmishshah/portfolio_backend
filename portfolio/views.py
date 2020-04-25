@@ -47,6 +47,11 @@ def getAllPersonalInfo(request):
     edu = e.getAllPersonalInfo()
     edu_json = serializers.serialize('json', edu)
     return HttpResponse({edu_json})
+def getAllPublications(request):
+    edu = e.getAllPublications()
+    edu_json = serializers.serialize('json', edu)
+    return HttpResponse({edu_json})
+
 @csrf_exempt
 def sendEmail(request):
     if request.method == 'POST':

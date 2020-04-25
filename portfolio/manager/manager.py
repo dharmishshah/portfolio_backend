@@ -2,8 +2,8 @@ from datetime import datetime
 from django.core.mail import send_mail
 
 from Portfolio_backend.settings import EMAIL_HOST_USER, EMAIL_RECIPIENT
-from portfolio.models.models import Education, Experience, Skills, Projects, Certificates, Recommendations, Personal, \
-    EmailDetails
+from portfolio.models.models import Education, Experience, Skills, Projects, Certificates, Recommendations, \
+    Personal, EmailDetails, Publications
 
 
 
@@ -53,6 +53,14 @@ def getAllPersonalInfo():
     personal = Personal.objects.all()
     values = []
     for e in personal:
+        values.append(e)
+    return values
+
+
+def getAllPublications():
+    publication = Publications.objects.all()
+    values = []
+    for e in publication:
         values.append(e)
     return values
 

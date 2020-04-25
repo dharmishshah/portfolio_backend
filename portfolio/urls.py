@@ -19,6 +19,7 @@ urlpatterns = [
     path('getCertificates',views.getAllCertificates,name='getAllCertificates'),
     path('getRecommendations',views.getAllRecommendations,name='getAllRecommendations'),
     path('getPersonalInfo',views.getAllPersonalInfo,name='getAllPersonalInfo'),
+    path('getPublications', views.getAllPublications, name='getAllPublications'),
     path('sendEmail',views.sendEmail,name='sendEmail'),
 
     path('', include(router.urls)),
