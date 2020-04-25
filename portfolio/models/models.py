@@ -1,4 +1,3 @@
-from django import forms
 from djongo import models
 
 class Education(models.Model):
