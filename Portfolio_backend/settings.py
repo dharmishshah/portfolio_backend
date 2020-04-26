@@ -38,13 +38,14 @@ SECRET_KEY = '_aw(y494jcqpn+u9-#9+*_6*8$*&69e0hzreb36^b(qrcqa@3o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'dharmishshahdjango.herokuapp.com','dharmishshah.com']
+ALLOWED_HOSTS = ['localhost', 'dharmishshahdjango.herokuapp.com']
 
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
        'http://localhost:3000',
-        'http://dharmishshah.herokuapp.com'
+        'http://dharmishshah.herokuapp.com',
+        'http://dharmishshah.com'
 )
 
 # Application definition
