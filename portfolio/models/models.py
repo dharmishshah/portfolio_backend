@@ -34,6 +34,7 @@ class Experience(models.Model):
     imageLink = models.CharField(max_length=200)
     description = models.CharField(max_length=10000)
 
+
     def __str__(self):
         return self.company
 
@@ -98,6 +99,7 @@ class Recommendations(models.Model):
     imageLink = models.CharField(max_length=200)
     description = models.CharField(max_length=10000)
     status = models.CharField(max_length=1000)
+    dateFormat = models.DateField
 
     def __str__(self):
         return self.name
