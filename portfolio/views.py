@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -60,8 +62,9 @@ def sendEmail(request):
         organisation = request.POST.get("organisation")
         message = request.POST.get("message")
         e.sendEmail(name,organisation,email,message)
-        message = 'success'
-        return HttpResponse({'success'})
+        message = {}
+        message['message'] = 'success';
+        return HttpResponse({json.dumps(message)})
     else:
         return HttpResponse({'GET method not supported'})
 
