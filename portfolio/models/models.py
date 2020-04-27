@@ -1,4 +1,7 @@
-from djongo import models
+from datetime import datetime
+from django.db import models
+from django.utils import timezone
+
 
 class Education(models.Model):
     name = models.CharField(max_length=100)
@@ -16,6 +19,7 @@ class Education(models.Model):
     imageLink = models.CharField(max_length=200)
     courses = models.CharField(max_length=1000)
     link = models.CharField(max_length=200)
+    dateFormat = models.DateField()
     def __str__(self):
         return self.name
 
@@ -33,6 +37,7 @@ class Experience(models.Model):
     status = models.CharField(max_length=200)
     imageLink = models.CharField(max_length=200)
     description = models.CharField(max_length=10000)
+    dateFormat = models.DateField()
 
 
     def __str__(self):
@@ -59,9 +64,9 @@ class Projects(models.Model):
     techStack = models.CharField(max_length=1000)
     link = models.CharField(max_length=200)
     imageLink = models.CharField(max_length=200)
-    description = models.ArrayField
     status = models.CharField(max_length=1000)
     description = models.CharField(max_length=10000)
+    dateFormat = models.DateField()
     def __str__(self):
         return self.name
 
@@ -74,6 +79,7 @@ class Certificates(models.Model):
     imageLink = models.CharField(max_length=200)
     description = models.CharField(max_length=10000)
     status = models.CharField(max_length=1000)
+    dateFormat = models.DateField()
     def __str__(self):
         return self.name
 
@@ -86,6 +92,7 @@ class Publications(models.Model):
     imageLink = models.CharField(max_length=200)
     description = models.CharField(max_length=10000)
     status = models.CharField(max_length=1000)
+    dateFormat = models.DateField()
 
     def __str__(self):
         return self.name
@@ -99,7 +106,7 @@ class Recommendations(models.Model):
     imageLink = models.CharField(max_length=200)
     description = models.CharField(max_length=10000)
     status = models.CharField(max_length=1000)
-    dateFormat = models.DateField
+    dateFormat = models.DateField()
 
     def __str__(self):
         return self.name
@@ -111,6 +118,7 @@ class Personal(models.Model):
     imageLink = models.CharField(max_length=200)
     description = models.CharField(max_length=10000)
     status = models.CharField(max_length=1000)
+    dateFormat = models.DateField()
 
     def __str__(self):
         return self.interests

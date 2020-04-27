@@ -8,14 +8,14 @@ from portfolio.models.models import Education, Experience, Skills, Projects, Cer
 
 
 def getAllEducations():
-    educations = Education.objects.all()
+    educations = Education.objects.all().order_by("-dateFormat")
     values = []
     for e in educations:
         values.append(e)
     return values
 
 def getAllExperiences():
-    educations = Experience.objects.all()
+    educations = Experience.objects.all().order_by("-dateFormat")
     values = []
     for e in educations:
         values.append(e)
@@ -29,21 +29,21 @@ def getAllSkills():
     return values
 
 def getAllProjects():
-    educations = Projects.objects.all()
+    educations = Projects.objects.all().order_by("-dateFormat")
     values = []
     for e in educations:
         values.append(e)
     return values
 
 def getAllCertificates():
-    certificates = Certificates.objects.all()
+    certificates = Certificates.objects.all().order_by("-dateFormat")
     values = []
     for e in certificates:
         values.append(e)
     return values
 
 def getAllRecommendations():
-    recommendations = Recommendations.objects.all()
+    recommendations = Recommendations.objects.all().order_by("-dateFormat")
     values = []
     for e in recommendations:
         values.append(e)
@@ -58,7 +58,7 @@ def getAllPersonalInfo():
 
 
 def getAllPublications():
-    publication = Publications.objects.all()
+    publication = Publications.objects.all().order_by("-dateFormat")
     values = []
     for e in publication:
         values.append(e)
