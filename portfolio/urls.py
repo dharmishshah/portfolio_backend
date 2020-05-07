@@ -20,6 +20,7 @@ urlpatterns = [
     path('getRecommendations',views.getAllRecommendations,name='getAllRecommendations'),
     path('getPersonalInfo',views.getAllPersonalInfo,name='getAllPersonalInfo'),
     path('getPublications', views.getAllPublications, name='getAllPublications'),
+    path('getBasicDetails', views.getBasicDetails, name='getBasicDetails'),
     path('sendEmail',views.sendEmail,name='sendEmail'),
 
     path('', include(router.urls)),

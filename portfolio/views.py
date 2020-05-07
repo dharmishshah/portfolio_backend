@@ -54,6 +54,11 @@ def getAllPublications(request):
     edu_json = serializers.serialize('json', edu)
     return HttpResponse({edu_json})
 
+def getBasicDetails(request):
+    edu = e.getBasicDetails()
+    edu_json = serializers.serialize('json', edu)
+    return HttpResponse({edu_json})
+
 @csrf_exempt
 def sendEmail(request):
     if request.method == 'POST':

@@ -132,3 +132,19 @@ class EmailDetails(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class BasicDetails(models.Model):
+    name = models.CharField(max_length=100)
+    about1 = models.CharField(max_length=10000)
+    about2 = models.CharField(max_length=10000)
+    role = models.CharField(max_length=1000)
+    resumeLink = models.CharField(max_length=1000)
+    email = models.CharField(max_length=100)
+    github = models.CharField(max_length=1000)
+    linkedin = models.CharField(max_length=1000)
+    location = models.CharField(max_length=1000)
+    mobile = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.name
