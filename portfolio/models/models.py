@@ -64,6 +64,8 @@ class Projects(models.Model):
     techStack = models.CharField(max_length=1000)
     link = models.CharField(max_length=200)
     imageLink = models.CharField(max_length=200)
+    githubBackend = models.CharField(max_length=200)
+    githubFrontend = models.CharField(max_length=200)
     status = models.CharField(max_length=1000)
     description = models.CharField(max_length=10000)
     dateFormat = models.DateField()
